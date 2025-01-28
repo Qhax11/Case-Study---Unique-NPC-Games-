@@ -1,7 +1,6 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "CaseStudyCharacter.h"
-#include "CaseStudyProjectile.h"
 #include "Animation/AnimInstance.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
@@ -14,9 +13,6 @@
 
 ACaseStudyCharacter::ACaseStudyCharacter()
 {
-	// Character doesnt have a rifle at start
-	bHasRifle = false;
-	
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(55.f, 96.0f);
 		
@@ -50,7 +46,6 @@ void ACaseStudyCharacter::BeginPlay()
 			Subsystem->AddMappingContext(DefaultMappingContext, 0);
 		}
 	}
-
 }
 
 //////////////////////////////////////////////////////////////////////////// Input
@@ -99,12 +94,3 @@ void ACaseStudyCharacter::Look(const FInputActionValue& Value)
 	}
 }
 
-void ACaseStudyCharacter::SetHasRifle(bool bNewHasRifle)
-{
-	bHasRifle = bNewHasRifle;
-}
-
-bool ACaseStudyCharacter::GetHasRifle()
-{
-	return bHasRifle;
-}
