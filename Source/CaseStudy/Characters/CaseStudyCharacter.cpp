@@ -6,6 +6,7 @@
 #include "Components/CapsuleComponent.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "CaseStudy/Characters/Player/Components/AC_MakeInteractionAbility.h"
 
 
 //////////////////////////////////////////////////////////////////////////
@@ -31,6 +32,7 @@ ACaseStudyCharacter::ACaseStudyCharacter()
 	//Mesh1P->SetRelativeRotation(FRotator(0.9f, -19.19f, 5.2f));
 	Mesh1P->SetRelativeLocation(FVector(-30.f, 0.f, -150.f));
 
+	MakeInteractionAbilityComponent = CreateDefaultSubobject<UAC_MakeInteractionAbility>(TEXT("MakeInteractionAbilityComponent"));
 }
 
 void ACaseStudyCharacter::BeginPlay()
