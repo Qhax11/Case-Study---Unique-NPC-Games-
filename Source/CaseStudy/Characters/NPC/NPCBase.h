@@ -19,5 +19,7 @@ protected:
 
 	virtual void MakeInteraction();
 
+	UPROPERTY(EditDefaultsOnly, Category = "Interaction")
+	TSubclassOf<class UUserWidget> InteractionPopUpClass;
 
 };

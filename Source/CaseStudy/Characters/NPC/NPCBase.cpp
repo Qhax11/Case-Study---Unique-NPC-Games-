@@ -2,6 +2,7 @@
 
 
 #include "NPCBase.h"
+#include "CaseStudy/Gameplay/UI/W_InteractionPopUp.h"
 
 ANPCBase::ANPCBase()
 {
@@ -16,7 +17,14 @@ void ANPCBase::BeginPlay()
 
 void ANPCBase::MakeInteraction()
 {
-	UE_LOG(LogTemp, Warning, TEXT("MAKED INTERACTION!"));
+    if (InteractionPopUpClass)
+    {
+        UW_InteractionPopUp* InteractionPopUpWidget = Cast<UW_InteractionPopUp>(CreateWidget<UW_InteractionPopUp>(GetWorld()->GetFirstPlayerController(), InteractionPopUpClass));
+        if (InteractionPopUpWidget)
+        {
+            InteractionPopUpWidget->AddToViewport();
+        }
+    }
 }
 
 
