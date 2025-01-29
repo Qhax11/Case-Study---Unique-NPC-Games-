@@ -6,27 +6,6 @@
 #include "CaseStudy/Gameplay/Interfaces/I_Interaction.h"
 #include "A_HotbarItem.generated.h"
 
-USTRUCT(BlueprintType)
-struct FHotbarItemData
-{
-	GENERATED_BODY()
-
-public:
-	UPROPERTY(EditDefaultsOnly, Category = "HotbarItemData")
-	FText Name;
-
-	UPROPERTY(EditDefaultsOnly, Category = "HotbarItemData")
-	UTexture2D* Image;
-
-	FHotbarItemData() = default;
-
-	FHotbarItemData(FText InName, UTexture2D* InImage)
-		: Name(InName),
-		Image(InImage)
-	{}
-
-};
-
 UCLASS()
 class CASESTUDY_API AA_HotbarItem : public AActor, public II_Interaction
 {
@@ -35,13 +14,11 @@ class CASESTUDY_API AA_HotbarItem : public AActor, public II_Interaction
 public:	
 	AA_HotbarItem();
 
-	UPROPERTY(EditDefaultsOnly)
-	FHotbarItemData ItemData;
-
 protected:
 	virtual void BeginPlay() override;
 
 	virtual void MakeInteraction(AActor* InteractingActor);
 
 	void GoToHotbar(AActor* InteractingActor);
+
 };

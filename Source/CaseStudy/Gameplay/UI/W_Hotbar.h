@@ -5,7 +5,7 @@
 #include "Blueprint/UserWidget.h"
 #include "W_Hotbar.generated.h"
 
-class UTextBlock;
+struct FHotbarItemData;
 
 UCLASS()
 class CASESTUDY_API UW_Hotbar : public UUserWidget
@@ -13,7 +13,18 @@ class CASESTUDY_API UW_Hotbar : public UUserWidget
 	GENERATED_BODY()
 
 public:
-	
 	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
-	TObjectPtr<UTextBlock> T_HotbarItemName;
+	TObjectPtr<class UTextBlock> T_HotbarItemName;
+
+	UPROPERTY(BlueprintReadWrite, meta = (BindWidget))
+	TObjectPtr<class UImage> IMG_HotbarItemImage;
+
+	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
+	TObjectPtr<class UTextBlock> T_InputNum;
+
+	void AddHotbarData(FHotbarItemData& HotbarItemData);
+
+	void SetInputNum(int32 InputNum);
+
+	bool bIsValid = false;
 };

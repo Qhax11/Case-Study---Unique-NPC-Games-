@@ -23,7 +23,7 @@ void AA_HotbarItem::GoToHotbar(AActor* InteractingActor)
 {
 	if (UAC_Hotbar* InteractingActorHotbarComp = Cast<UAC_Hotbar>(InteractingActor->GetComponentByClass(UAC_Hotbar::StaticClass())))
 	{
-		if (InteractingActorHotbarComp->AddItemToHotbar(this)) 
+		if (InteractingActorHotbarComp->AddHotbarItem(this))
 		{
 			//Destroy();
 		}

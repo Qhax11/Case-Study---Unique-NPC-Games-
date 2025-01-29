@@ -30,7 +30,7 @@ bool UAC_Hotbar::TryCreateWidget()
 {
     if (HotbarPanelWidgetClass)
     {
-        UW_HotbarPanel* HotbarPanelWidget = Cast<UW_HotbarPanel>(CreateWidget<UW_HotbarPanel>(GetWorld()->GetFirstPlayerController(), HotbarPanelWidgetClass));
+        HotbarPanelWidget = Cast<UW_HotbarPanel>(CreateWidget<UW_HotbarPanel>(GetWorld()->GetFirstPlayerController(), HotbarPanelWidgetClass));
         if (HotbarPanelWidget)
         {
             HotbarPanelWidget->AddToViewport();
@@ -64,7 +64,7 @@ void UAC_Hotbar::OnHotbarNum2()
     TryToUseHotbarItem(2);
 }
 
-void UAC_Hotbar::OnHotbarNum3()
+void UAC_Hotbar::OnHotbarNum3() 
 {
     TryToUseHotbarItem(3);
 }
@@ -81,7 +81,7 @@ void UAC_Hotbar::TryToUseHotbarItem(int32 Index)
     }
 }
 
-bool UAC_Hotbar::AddItemToHotbar(AA_HotbarItem* HotbarItem)
+bool UAC_Hotbar::AddHotbarItem(AA_HotbarItem* HotbarItem)
 {
     if (!HotbarItem) 
     {
@@ -89,7 +89,12 @@ bool UAC_Hotbar::AddItemToHotbar(AA_HotbarItem* HotbarItem)
     }
 
     Items.Add(HotbarItem);
-    return true;
+    if (HotbarPanelWidget->AddHotbarToEmptySlot(HotbarItem)) 
+    {
+        return true;
+    }
+
+    return false;
 }
 
 

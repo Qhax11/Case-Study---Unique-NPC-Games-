@@ -2,7 +2,7 @@
 
 
 #include "AC_Hotbar.h"
-#include "CaseStudy/Gameplay/UI/W_Hotbar.h"
+#include "CaseStudy/Gameplay/UI/Hotbar/W_HotbarPanel.h"
 #include "EnhancedInputComponent.h"
 #include "CaseStudy/Gameplay/Actors/A_HotbarItem.h"
 
@@ -28,12 +28,12 @@ void UAC_Hotbar::BeginPlay()
 
 bool UAC_Hotbar::TryCreateWidget()
 {
-    if (HotbarWidgetClass)
+    if (HotbarPanelWidgetClass)
     {
-        UW_Hotbar* HotbarWidget = Cast<UW_Hotbar>(CreateWidget<UW_Hotbar>(GetWorld()->GetFirstPlayerController(), HotbarWidgetClass));
-        if (HotbarWidget)
+        HotbarPanelWidget = Cast<UW_HotbarPanel>(CreateWidget<UW_HotbarPanel>(GetWorld()->GetFirstPlayerController(), HotbarPanelWidgetClass));
+        if (HotbarPanelWidget)
         {
-            HotbarWidget->AddToViewport();
+            HotbarPanelWidget->AddToViewport();
             return true;
         }
     }

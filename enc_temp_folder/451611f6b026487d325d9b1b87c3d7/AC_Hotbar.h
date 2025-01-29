@@ -5,6 +5,8 @@
 #include "Components/ActorComponent.h"
 #include "AC_Hotbar.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnHotbarItemAdded, const AA_HotbarItem*, NewHotbarItem);
+
 class AA_HotbarItem;
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
@@ -14,6 +16,8 @@ class CASESTUDY_API UAC_Hotbar : public UActorComponent
 
 public:	
 	UAC_Hotbar();
+
+	class UW_HotbarPanel* HotbarPanelWidget;
 
 protected:
 	virtual void BeginPlay() override;
@@ -43,11 +47,12 @@ protected:
 	void TryToUseHotbarItem(int32 Index);
 
 	UPROPERTY(EditDefaultsOnly, Category = "Widget")
-	TSubclassOf<class UUserWidget> HotbarWidgetClass;
+	TSubclassOf<class UUserWidget> HotbarPanelWidgetClass;
 
 public:
-
 	bool AddItemToHotbar(AA_HotbarItem* HotbarItem);
+
+	FOnHotbarItemAdded OnHotbarItemAdded;
 
 	TArray<AA_HotbarItem*> Items;
 };

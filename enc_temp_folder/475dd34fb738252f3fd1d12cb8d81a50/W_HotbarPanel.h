@@ -5,9 +5,9 @@
 #include "Blueprint/UserWidget.h"
 #include "W_HotbarPanel.generated.h"
 
-class UW_Hotbar;
-class AA_HotbarItem;
-
+/**
+ * 
+ */
 UCLASS()
 class CASESTUDY_API UW_HotbarPanel : public UUserWidget
 {
@@ -16,7 +16,6 @@ class CASESTUDY_API UW_HotbarPanel : public UUserWidget
 public:
 	virtual void NativeConstruct();
 
-	TArray<UW_Hotbar*> HotbarWidgets;
-
-	bool AddHotbarToEmptySlot(AA_HotbarItem* HotbarItem);
+	void CustomInitialize();
+	
 };
