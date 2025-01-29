@@ -5,10 +5,15 @@
 #include "Blueprint/UserWidget.h"
 #include "W_Hotbar.generated.h"
 
+class UTextBlock;
 
 UCLASS()
 class CASESTUDY_API UW_Hotbar : public UUserWidget
 {
 	GENERATED_BODY()
+
+public:
 	
+	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
+	TObjectPtr<UTextBlock> T_HotbarItemName;
 };

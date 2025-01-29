@@ -43,7 +43,7 @@ protected:
 	void TryToUseHotbarItem(int32 Index);
 
 	UPROPERTY(EditDefaultsOnly, Category = "Widget")
-	TSubclassOf<class UUserWidget> HotbarPanelWidgetClass;
+	TSubclassOf<class UUserWidget> HotbarWidgetClass;
 
 public:
 
