@@ -97,5 +97,17 @@ bool UAC_Hotbar::AddHotbarItem(AA_HotbarItem* HotbarItem)
     return false;
 }
 
+bool UAC_Hotbar::AddHotbarItem(TSubclassOf<AA_HotbarItem> HotbarItemClass)
+{
+    if (!HotbarItemClass)
+    {
+        return false;
+    }
+
+    AA_HotbarItem* HotBarItemCDO = Cast<AA_HotbarItem>(HotbarItemClass->GetDefaultObject());
+
+    return AddHotbarItem(HotBarItemCDO);
+}
+
 
 

@@ -17,20 +17,26 @@ public:
 
 	void CustomInitialize(ACharacter* OwnerChar);
 
-	ACharacter* OwnerCharacter;
+	class ANPCBase* OwnerNPC;
 
 	UPROPERTY(EditDefaultsOnly)
 	UAnimMontage* Montage;
 
 	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
-	TObjectPtr<UButton> PlayAnimationButton;
+	TObjectPtr<UButton> B_PlayAnimationButton;
 
 	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
-	TObjectPtr<UButton> SayHiButton;
+	TObjectPtr<UButton> B_SayHiButton;
+
+	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
+	TObjectPtr<UButton> B_TakeItemButton;
 
 	UFUNCTION()
 	void OnPlayAnimationButtonClicked();
 
 	UFUNCTION()
 	void OnSayHiButtonClicked();
+
+	UFUNCTION()
+	void OnTakeItemButtonClicked();
 };

@@ -52,6 +52,8 @@ protected:
 public:
 	bool AddHotbarItem(AA_HotbarItem* HotbarItem);
 
+	bool AddHotbarItem(TSubclassOf<AA_HotbarItem> HotbarItemClass);
+
 	FOnHotbarItemAdded OnHotbarItemAdded;
 
 	TArray<AA_HotbarItem*> Items;

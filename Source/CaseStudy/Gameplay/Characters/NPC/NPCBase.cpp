@@ -3,6 +3,7 @@
 
 #include "NPCBase.h"
 #include "CaseStudy/Gameplay/UI/W_InteractionPopUp.h"
+#include "CaseStudy/Gameplay/Characters/Player/Components/AC_Hotbar.h"
 
 ANPCBase::ANPCBase()
 {
@@ -16,6 +17,7 @@ void ANPCBase::BeginPlay()
 
 void ANPCBase::MakeInteraction(AActor* InteractingActor)
 {
+    Player = InteractingActor;
     CreatePopUpWidget();
 }
 
@@ -40,5 +42,21 @@ bool ANPCBase::CreatePopUpWidget()
     }
 }
 
+void ANPCBase::PlayPopUpMontage()
+{
+    GetMesh()->GetAnimInstance()->Montage_Play(PopUpMontage);
+}
+
+void ANPCBase::GiveHavedHotbarItemToPlayer()
+{
+    if (UAC_Hotbar* PlayerHotbarComp = Cast<UAC_Hotbar>(Player->GetComponentByClass(UAC_Hotbar::StaticClass())))
+    {
+        PlayerHotbarComp->AddHotbarItem(HotbarItemClass);
+    }
+    else
+    {
+        UE_LOG(LogTemp, Warning, TEXT("Hotbar component couldn't find in: %s"), *GetName());
+    }
+}
 
 
