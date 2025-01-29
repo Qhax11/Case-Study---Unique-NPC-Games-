@@ -15,15 +15,22 @@ class CASESTUDY_API UW_InteractionPopUp : public UUserWidget
 public:
 	virtual void NativeConstruct();
 
+	void CustomInitialize(ACharacter* OwnerChar);
+
+	ACharacter* OwnerCharacter;
+
+	UPROPERTY(EditDefaultsOnly)
+	UAnimMontage* Montage;
+
 	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
 	TObjectPtr<UButton> PlayAnimationButton;
 
 	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
-	TObjectPtr<UButton> PlaySoundButton;
+	TObjectPtr<UButton> SayHiButton;
 
 	UFUNCTION()
 	void OnPlayAnimationButtonClicked();
 
 	UFUNCTION()
-	void OnPlaySoundButtonClicked();
+	void OnSayHiButtonClicked();
 };

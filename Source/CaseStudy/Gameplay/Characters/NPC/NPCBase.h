@@ -17,7 +17,9 @@ public:
 protected:
 	virtual void BeginPlay() override;
 
-	virtual void MakeInteraction();
+	virtual void MakeInteraction(AActor* InteractingActor);
+
+	bool CreatePopUpWidget();
 
 	UPROPERTY(EditDefaultsOnly, Category = "Interaction")
 	TSubclassOf<class UUserWidget> InteractionPopUpClass;

@@ -88,7 +88,7 @@ void UAC_MakeInteractionAbility::MakeInteraction(AActor* InteractionalActor)
 {
 	if (II_Interaction* InteractionInterface = Cast<II_Interaction>(InteractionalActor))
 	{
-		InteractionInterface->MakeInteraction();
+		InteractionInterface->MakeInteraction(GetOwner());
 	}
 }
 

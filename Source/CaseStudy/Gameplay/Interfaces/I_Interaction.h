@@ -18,6 +18,6 @@ class II_Interaction
 
 public:
 
-	virtual void MakeInteraction() {}
+	virtual void MakeInteraction(AActor* InteractingActor) {}
 
 };

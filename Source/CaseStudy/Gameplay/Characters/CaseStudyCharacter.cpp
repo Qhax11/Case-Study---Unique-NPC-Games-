@@ -6,7 +6,8 @@
 #include "Components/CapsuleComponent.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
-#include "CaseStudy/Characters/Player/Components/AC_MakeInteractionAbility.h"
+#include "CaseStudy/Gameplay/Characters/Player/Components/AC_MakeInteractionAbility.h"
+#include "CaseStudy/Gameplay/Characters/Player/Components/AC_Hotbar.h"
 
 
 //////////////////////////////////////////////////////////////////////////
@@ -33,6 +34,7 @@ ACaseStudyCharacter::ACaseStudyCharacter()
 	Mesh1P->SetRelativeLocation(FVector(-30.f, 0.f, -150.f));
 
 	MakeInteractionAbilityComponent = CreateDefaultSubobject<UAC_MakeInteractionAbility>(TEXT("MakeInteractionAbilityComponent"));
+	HotbarComponent = CreateDefaultSubobject<UAC_Hotbar>(TEXT("HotbarComponent"));
 }
 
 void ACaseStudyCharacter::BeginPlay()
