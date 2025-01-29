@@ -23,14 +23,7 @@ void AA_HotbarItem::GoToHotbar(AActor* InteractingActor)
 {
 	if (UAC_Hotbar* InteractingActorHotbarComp = Cast<UAC_Hotbar>(InteractingActor->GetComponentByClass(UAC_Hotbar::StaticClass())))
 	{
-		if (InteractingActorHotbarComp->AddItemToHotbar(this)) 
-		{
-			//Destroy();
-		}
-		else
-		{
-			UE_LOG(LogTemp, Warning, TEXT("Hotbar component couldn't add this Hotbar Item: %s"), *GetName());
-		}
+		InteractingActorHotbarComp->AddItemToHotbar(this);
 	}
 	else
 	{
