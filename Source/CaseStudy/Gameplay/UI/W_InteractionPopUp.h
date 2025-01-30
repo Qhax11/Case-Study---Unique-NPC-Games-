@@ -17,7 +17,7 @@ public:
 
 	void CustomInitialize(ACharacter* OwnerChar);
 
-	class ANPCBase* OwnerNPC;
+	class ASellerNPC* OwnerNPC;
 
 	UPROPERTY(EditDefaultsOnly)
 	UAnimMontage* Montage;

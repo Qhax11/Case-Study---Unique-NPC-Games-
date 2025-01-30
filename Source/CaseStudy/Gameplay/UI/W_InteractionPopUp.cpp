@@ -3,7 +3,7 @@
 
 #include "W_InteractionPopUp.h"
 #include "Components/Button.h"
-#include "CaseStudy/Gameplay/Characters/NPC/NPCBase.h"
+#include "CaseStudy/Gameplay/Characters/NPC/SellerNPC.h"
 
 void UW_InteractionPopUp::NativeConstruct()
 {
@@ -19,7 +19,7 @@ void UW_InteractionPopUp::NativeConstruct()
 
 void UW_InteractionPopUp::CustomInitialize(ACharacter* OwnerChar)
 {
-    OwnerNPC = Cast<ANPCBase>(OwnerChar);
+    OwnerNPC = Cast<ASellerNPC>(OwnerChar);
 }
 
 void UW_InteractionPopUp::OnPlayAnimationButtonClicked()
