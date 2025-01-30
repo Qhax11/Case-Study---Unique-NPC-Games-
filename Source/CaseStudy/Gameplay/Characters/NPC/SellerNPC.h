@@ -29,7 +29,7 @@ public:
 	UPROPERTY(EditDefaultsOnly)
 	UAnimMontage* PopUpMontage;
 
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(EditAnyWhere)
 	TSubclassOf<AA_HotbarItem> HotbarItemClass;
 
 	AActor* Player;
