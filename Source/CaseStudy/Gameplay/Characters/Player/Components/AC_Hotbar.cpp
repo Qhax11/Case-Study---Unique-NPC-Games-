@@ -73,7 +73,8 @@ void UAC_Hotbar::TryToUseHotbarItem(int32 Index)
 {
     if (Items.IsValidIndex(Index)) 
     {
-        GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, (TEXT("Used: %s"), *Items[Index]->ItemData.Name.ToString()));
+        GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Used: %s"), *Items[Index]->ItemData.Name.ToString()));
+        UE_LOG(LogTemp, Warning, TEXT("zaa: %s"), *Items[Index]->ItemData.Name.ToString());
     }
     else 
     {
