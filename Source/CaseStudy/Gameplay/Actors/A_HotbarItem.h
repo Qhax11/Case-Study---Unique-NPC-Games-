@@ -35,6 +35,9 @@ class CASESTUDY_API AA_HotbarItem : public AActor, public II_Interaction
 public:	
 	AA_HotbarItem();
 
+	UPROPERTY(VisibleAnywhere)
+	UStaticMeshComponent* MeshComponent;
+
 	UPROPERTY(EditDefaultsOnly)
 	FHotbarItemData ItemData;
 

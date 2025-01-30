@@ -7,6 +7,9 @@
 AA_HotbarItem::AA_HotbarItem()
 {
 	PrimaryActorTick.bCanEverTick = false;
+
+	MeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MeshComponent"));
+	RootComponent = MeshComponent;
 }
 
 void AA_HotbarItem::BeginPlay()
@@ -25,7 +28,7 @@ void AA_HotbarItem::AddToHotbar(AActor* InteractingActor)
 	{
 		if (InteractingActorHotbarComp->AddHotbarItem(this))
 		{
-			//Destroy();
+			MeshComponent->SetVisibility(false);
 		}
 		else
 		{

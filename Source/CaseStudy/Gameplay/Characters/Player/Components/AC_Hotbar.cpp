@@ -56,24 +56,24 @@ bool UAC_Hotbar::TryBindInputs()
 
 void UAC_Hotbar::OnHotbarNum1()
 {
-    TryToUseHotbarItem(1);
+    TryToUseHotbarItem(0);
 }
 
 void UAC_Hotbar::OnHotbarNum2()
 {
-    TryToUseHotbarItem(2);
+    TryToUseHotbarItem(1);
 }
 
 void UAC_Hotbar::OnHotbarNum3() 
 {
-    TryToUseHotbarItem(3);
+    TryToUseHotbarItem(2);
 }
 
 void UAC_Hotbar::TryToUseHotbarItem(int32 Index)
 {
     if (Items.IsValidIndex(Index)) 
     {
-        GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, (TEXT("Used: %s"), *Items[Index]->GetName()));
+        GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, (TEXT("Used: %s"), *Items[Index]->ItemData.Name.ToString()));
     }
     else 
     {

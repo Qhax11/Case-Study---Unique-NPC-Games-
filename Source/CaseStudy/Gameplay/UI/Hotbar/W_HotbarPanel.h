@@ -19,4 +19,5 @@ public:
 	TArray<UW_Hotbar*> HotbarWidgets;
 
 	bool AddHotbarToEmptySlot(AA_HotbarItem* HotbarItem);
+
 };
