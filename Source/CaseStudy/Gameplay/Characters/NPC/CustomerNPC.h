@@ -17,4 +17,5 @@ public:
 	virtual void BeginPlay() override;
 
 	virtual void MakeInteraction(AActor* InteractingActor);
+
 };
