@@ -43,5 +43,5 @@ protected:
 
 	virtual void MakeInteraction(AActor* InteractingActor);
 
-	void GoToHotbar(AActor* InteractingActor);
+	void AddToHotbar(AActor* InteractingActor);
 };

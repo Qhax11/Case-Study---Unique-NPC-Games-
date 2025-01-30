@@ -3,7 +3,7 @@
 
 #include "W_HotbarPanel.h"
 #include "Blueprint/WidgetTree.h"
-#include "CaseStudy/Gameplay/UI/W_Hotbar.h"
+#include "CaseStudy/Gameplay/UI/Hotbar/W_Hotbar.h"
 #include "CaseStudy/Gameplay/Actors/A_HotbarItem.h"
 
 

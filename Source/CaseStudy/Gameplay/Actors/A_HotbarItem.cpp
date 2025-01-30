@@ -16,10 +16,10 @@ void AA_HotbarItem::BeginPlay()
 
 void AA_HotbarItem::MakeInteraction(AActor* InteractingActor)
 {
-	GoToHotbar(InteractingActor);
+	AddToHotbar(InteractingActor);
 }
 
-void AA_HotbarItem::GoToHotbar(AActor* InteractingActor)
+void AA_HotbarItem::AddToHotbar(AActor* InteractingActor)
 {
 	if (UAC_Hotbar* InteractingActorHotbarComp = Cast<UAC_Hotbar>(InteractingActor->GetComponentByClass(UAC_Hotbar::StaticClass())))
 	{

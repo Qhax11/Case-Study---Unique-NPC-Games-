@@ -8,8 +8,6 @@
 void ACustomerNPC::BeginPlay()
 {
 	Super::BeginPlay();
-
-
 }
 
 void ACustomerNPC::MakeInteraction(AActor* InteractingActor)
