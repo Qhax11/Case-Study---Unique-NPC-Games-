@@ -23,11 +23,7 @@ void UAC_MakeInteractionAbility::BeginPlay()
 		return;
 	}
 
-	if (TryBindInput()) 
-	{
-		UE_LOG(LogTemp, Warning, TEXT("TryBindInput is succes"));
-	}
-	else
+	if (!TryBindInput()) 
 	{
 		UE_LOG(LogTemp, Warning, TEXT("TryBindInput is failed"));
 	}

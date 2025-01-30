@@ -25,12 +25,11 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = "Interaction")
 	TSubclassOf<class UUserWidget> InteractionPopUpClass;
 
-	// Montage that play on PopUp button.
 	UPROPERTY(EditDefaultsOnly)
 	UAnimMontage* PopUpMontage;
 
 	UPROPERTY(EditAnyWhere)
 	TSubclassOf<AA_HotbarItem> HotbarItemClass;
 
-	AActor* Player;
+	AActor* PlayerActorRef;
 };

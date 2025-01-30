@@ -13,6 +13,10 @@ class CASESTUDY_API UW_Hotbar : public UUserWidget
 	GENERATED_BODY()
 
 public:
+	void AddHotbarData(FHotbarItemData& HotbarItemData);
+
+	void SetInputNum(int32 InputNum);
+
 	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
 	TObjectPtr<class UTextBlock> T_HotbarItemName;
 
@@ -21,10 +25,6 @@ public:
 
 	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
 	TObjectPtr<class UTextBlock> T_InputNum;
-
-	void AddHotbarData(FHotbarItemData& HotbarItemData);
-
-	void SetInputNum(int32 InputNum);
 
 	bool bIsValid = false;
 };

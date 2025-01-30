@@ -17,10 +17,14 @@ public:
 
 	void CustomInitialize(ACharacter* OwnerChar);
 
-	class ASellerNPC* OwnerNPC;
+	UFUNCTION()
+	void OnPlayAnimationButtonClicked();
 
-	UPROPERTY(EditDefaultsOnly)
-	UAnimMontage* Montage;
+	UFUNCTION()
+	void OnSayHiButtonClicked();
+
+	UFUNCTION()
+	void OnTakeItemButtonClicked();
 
 	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
 	TObjectPtr<UButton> B_PlayAnimationButton;
@@ -31,12 +35,8 @@ public:
 	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
 	TObjectPtr<UButton> B_TakeItemButton;
 
-	UFUNCTION()
-	void OnPlayAnimationButtonClicked();
+	UPROPERTY(EditDefaultsOnly)
+	UAnimMontage* Montage;
 
-	UFUNCTION()
-	void OnSayHiButtonClicked();
-
-	UFUNCTION()
-	void OnTakeItemButtonClicked();
+	class ASellerNPC* OwnerNPC;
 };

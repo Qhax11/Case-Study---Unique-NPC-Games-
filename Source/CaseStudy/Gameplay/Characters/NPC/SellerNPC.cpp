@@ -4,10 +4,15 @@
 #include "SellerNPC.h"
 #include "CaseStudy/Gameplay/UI/W_InteractionPopUp.h"
 #include "CaseStudy/Gameplay/Characters/Player/Components/AC_Hotbar.h"
+#include "CaseStudy/Gameplay/Characters/Player/CaseStudyCharacter.h"
 
 void ASellerNPC::MakeInteraction(AActor* InteractingActor)
 {
-	Player = InteractingActor;
+    if (InteractingActor->IsA(ACaseStudyCharacter::StaticClass())) 
+    {
+        PlayerActorRef = InteractingActor;
+    }
+
 	CreatePopUpWidget();
 }
 
@@ -39,7 +44,7 @@ void ASellerNPC::PlayPopUpMontage()
 
 void ASellerNPC::GiveHavedHotbarItemToPlayer()
 {
-    if (UAC_Hotbar* PlayerHotbarComp = Cast<UAC_Hotbar>(Player->GetComponentByClass(UAC_Hotbar::StaticClass())))
+    if (UAC_Hotbar* PlayerHotbarComp = Cast<UAC_Hotbar>(PlayerActorRef->GetComponentByClass(UAC_Hotbar::StaticClass())))
     {
         PlayerHotbarComp->AddHotbarItem(HotbarItemClass);
     }

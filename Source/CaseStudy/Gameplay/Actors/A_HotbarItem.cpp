@@ -31,10 +31,6 @@ void AA_HotbarItem::AddToHotbar(AActor* InteractingActor)
 			MeshComponent->SetVisibility(false);
 			MeshComponent->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 		}
-		else
-		{
-			UE_LOG(LogTemp, Warning, TEXT("Hotbar component couldn't add this Hotbar Item: %s"), *GetName());
-		}
 	}
 	else
 	{
