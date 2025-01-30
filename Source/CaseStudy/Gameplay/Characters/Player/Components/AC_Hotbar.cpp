@@ -56,20 +56,20 @@ bool UAC_Hotbar::TryBindInputs()
 
 void UAC_Hotbar::OnHotbarNum1()
 {
-    TryToUseHotbarItem(0);
+    UseHotbarItem(0);
 }
 
 void UAC_Hotbar::OnHotbarNum2()
 {
-    TryToUseHotbarItem(1);
+    UseHotbarItem(1);
 }
 
 void UAC_Hotbar::OnHotbarNum3() 
 {
-    TryToUseHotbarItem(2);
+    UseHotbarItem(2);
 }
 
-void UAC_Hotbar::TryToUseHotbarItem(int32 Index)
+void UAC_Hotbar::UseHotbarItem(int32 Index)
 {
     if (Items.IsValidIndex(Index)) 
     {

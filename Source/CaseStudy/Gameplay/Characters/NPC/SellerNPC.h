@@ -17,12 +17,12 @@ public:
 
 	bool CreatePopUpWidget();
 
-public:
 	void PlayPopUpMontage();
 
 	void GiveHavedHotbarItemToPlayer();
 
-	UPROPERTY(EditDefaultsOnly, Category = "Interaction")
+protected:
+	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<class UUserWidget> InteractionPopUpClass;
 
 	UPROPERTY(EditDefaultsOnly)

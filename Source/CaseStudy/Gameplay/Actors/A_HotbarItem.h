@@ -24,7 +24,6 @@ public:
 		: Name(InName),
 		Image(InImage)
 	{}
-
 };
 
 UCLASS()
@@ -35,9 +34,6 @@ class CASESTUDY_API AA_HotbarItem : public AActor, public II_Interaction
 public:	
 	AA_HotbarItem();
 
-	UPROPERTY(VisibleAnywhere)
-	UStaticMeshComponent* MeshComponent;
-
 	UPROPERTY(EditDefaultsOnly)
 	FHotbarItemData ItemData;
 
@@ -47,4 +43,7 @@ protected:
 	virtual void MakeInteraction(AActor* InteractingActor);
 
 	void AddToHotbar(AActor* InteractingActor);
+
+	UPROPERTY(VisibleAnywhere)
+	UStaticMeshComponent* MeshComponent;
 };

@@ -17,6 +17,7 @@ public:
 
 	void CustomInitialize(ACharacter* OwnerChar);
 
+protected:
 	UFUNCTION()
 	void OnPlayAnimationButtonClicked();
 
@@ -34,9 +35,6 @@ public:
 
 	UPROPERTY(BlueprintReadOnly, meta = (BindWidget))
 	TObjectPtr<UButton> B_TakeItemButton;
-
-	UPROPERTY(EditDefaultsOnly)
-	UAnimMontage* Montage;
 
 	class ASellerNPC* OwnerNPC;
 };

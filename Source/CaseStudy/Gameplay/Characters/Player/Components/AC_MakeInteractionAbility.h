@@ -23,7 +23,7 @@ protected:
 
 	AActor* GetActorFromLineTrace();
 
-	void MakeInteraction(AActor* InteractionalActor);
+	void CallInteraction(AActor* InteractionalActor);
 
 	UPROPERTY(EditDefaultsOnly, Category = Input)
 	class UInputAction* IA_MakeInteraction;

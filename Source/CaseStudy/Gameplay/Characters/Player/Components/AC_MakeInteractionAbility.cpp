@@ -43,7 +43,7 @@ bool UAC_MakeInteractionAbility::TryBindInput()
 void UAC_MakeInteractionAbility::ActivateAbility()
 {
 	AActor* ActorFromLineTrace = GetActorFromLineTrace();
-	MakeInteraction(ActorFromLineTrace);
+	CallInteraction(ActorFromLineTrace);
 }
 
 AActor* UAC_MakeInteractionAbility::GetActorFromLineTrace()
@@ -80,7 +80,7 @@ AActor* UAC_MakeInteractionAbility::GetActorFromLineTrace()
 	return HitResult.GetActor();
 }
 
-void UAC_MakeInteractionAbility::MakeInteraction(AActor* InteractionalActor)
+void UAC_MakeInteractionAbility::CallInteraction(AActor* InteractionalActor)
 {
 	if (II_Interaction* InteractionInterface = Cast<II_Interaction>(InteractionalActor))
 	{
