@@ -29,7 +29,6 @@ void AA_HotbarItem::AddToHotbar(AActor* InteractingActor)
 		if (InteractingActorHotbarComp->AddHotbarItem(this))
 		{
 			MeshComponent->SetVisibility(false);
-			MeshComponent->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 		}
 		else
 		{
